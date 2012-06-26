@@ -2,26 +2,108 @@
 <html lang="es">
 <head>
     <meta charset="utf-8"/>
-	<tittle>Push.js - Prueba que tan rapido eres ;)</title>
+    <title>Push.js - Prueba que tan rapido eres ;)</title>
 	<meta name="viewport" content="width=device-width , initial-scale=1, maximum-scale=1"/>
-	<link rel="stylesheet" href="style.css"/>
+	<link rel="stylesheet" href="/src/style.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="src/script.js"></script>
+    <style>
+    *{margin:0;}
+    html{background:#ccc;}
+    body{
+        max-width:480px;
+        background:#fff;
+        margin:40px auto;
+        padding:20px 0;
+        border-radius:10px;
+        text-align:center;
+        box-shadow:  0px 0px 20px 2px rgba(0, 0, 0, 80);
+    }
+    h1{margin-bottom:15px;}
+    nav{
+        font-size:0;
+        border:#000 solid 1px;
+        border-left:0;
+        border-right:0;
+    }
+    nav a{
+        display:inline-block;
+        width:50%;
+        padding:10px 0;
+        font-size:34px;
+        text-decoration:none;
+        color:#000000;
+        text-shadow: 0px 0px 8px #612961;
+       
+    }
+    nav a:hover, a.active{
+        color:#d415d4;
+    }
+    section{text-align:center; padding:50px;}
+    article{text-align:left; margin:40px 0 0 0;}
+    .stylish{
+        width:150px;
+        height:150px;
+        display:inline-block;
+        border-radius:50%;
+        border:#c255c2 8px solid;
+        font-size:28px;
+        color:#c4bcc4;
+        line-height:150px;
+        text-shadow:0 1px 0 #fff;
+        text-decoration:none;
+        text-align:center;
+        background:#b806b8;
+        
+        box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 40);
+    }
+    .stylish:hover{
+        border:#8a008a 8px solid;
+        color:#853d85;
+        text-decoration:none;
+        background:#d900d9;
+    }
+    div#black{
+        position:absolute;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.9);
+        display:none;
+        z-index:10;
+        top:0;
+        left:0;
+    }
+    @media screen and (max-width:480px){
+        html{background:#fff;}
+        body{
+            margin:20px auto;
+            padding:5px 0;
+        }
+        nav a{
+            width:40%;
+            padding:6px 0;
+            font-size:24px;
+        } 
+        section{padding:10px;}
+        article{margin:20px 0 0 0;}
+    }
+    </style>
 </head>
 <body>
 <header>
 	<h1>Push.js</h1>
 	<nav>
-		<a href="#game">Game</a>
+		<a href="#game" class="active">Game</a>
 		<a href="#score">Scores</a>
 	</nav>
 </header>
 <section>
-	<audio controls="controls">
-		<source src="http://winamp.zuperdns.net:8500/;stream.nsv" type="audio/mpeg" />
-		Este codigo no funciona en este navegador. 
-	</audio>
+    <div class="stylish"></div>
+    <article>
+        <p>Este es un simple juego en el que se busca medir la velocidad de los participantes para pulsar el enorme boton que tenemos en la pantalla</p>
+    </article>
 </section>
+<div id="black"></div>
 </body>
 </html>
